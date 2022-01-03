@@ -13,3 +13,12 @@ var num2 =Number(req.body.num2);
 var result=num1+num2;
 res.send("Calculation:"+result);
   });
+
+app.get("/bmicalculator",function(req,res){res.sendFile(__dirname+"/bmiCalculator.html");});
+app.post("/bmicalculator",function (req,res) {
+  var weight=parseFloat(req.body.weight);
+  var height=parseFloat(req.body.height);
+  var bmi=weight/(height*height);// just to check
+  res.send("Your BMI is "+bmi);
+
+  });

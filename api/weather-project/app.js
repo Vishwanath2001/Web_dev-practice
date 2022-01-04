@@ -14,7 +14,7 @@ app.get("/",function (req,res) {
 
     
     const api_url="https://api.openweathermap.org/data/2.5/weather?q="+ query+"&units=metric&appid=5f079803e5af34518c02d08c591af80b";
-    console.log(api_url);
+    //console.log(api_url);
   https.get(api_url,function (api_resp) {
       
       

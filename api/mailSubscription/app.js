@@ -32,11 +32,11 @@ var data={
 
 const jsonData=JSON.stringify(data);
 
-const url="https://us20.api.mailchimp.com/3.0/lists/789a1e1700";
+const url="https://us20.api.mailchimp.com/3.0/lists/{list_id}";
 
 const options={
     method:"POST",
-    auth:"vishwa:52f35b4688927a31417716c31e73d5cd-us20"
+    auth:"vishwa:{your api key}"
 }
 const request=https.request(url,options,function(response){
     
@@ -64,5 +64,3 @@ app.listen(3000,function(){
 })
 
 
-// api key:52f35b4688927a31417716c31e73d5cd-us20
-//789a1e1700

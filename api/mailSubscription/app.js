@@ -64,8 +64,4 @@ app.listen(3000,function(){
 })
 
 
-<<<<<<< HEAD
-// api key:52f35b4688927a31417716c31e73d5cd-us20
-//789a1e1700
-=======
->>>>>>> a45d80153652dc411ca79ac137bfe0838c7399a1
+

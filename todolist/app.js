@@ -10,6 +10,7 @@ app.set('view engine',"ejs");
 
 
 var items=["Get up","Go to gym","Eat breakfast"];
+var Workitems=[];
 app.get("/",function(req,res){
     var today=new Date();
     var currentDay=today.getDay();
@@ -30,10 +31,23 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res){
  var item=req.body.newItem
- items.push(item);
-
- res.redirect("/");
+ let identifier=req.body.list;
+ console.log(req.body);
+ if(identifier==="Work")
+ {
+    Workitems.push(item);
+    res.redirect("/work");
+ }
+ else
+{ items.push(item);
+ res.redirect("/");}
 });
+
+
+app.get("/work",function (req,res) 
+  {
+    res.render('index',{frontDay:"Work List",newItems:Workitems});
+  });
 
 app.listen(3000,function(){
 console.log("server started at 3000");
